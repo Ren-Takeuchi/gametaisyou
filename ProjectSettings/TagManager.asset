@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Item
+  - Obstacle
+  - invisibleWall
   - 
   - 
   - 
@@ -40,4 +41,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3994071221
+    locked: 0
+  - name: Obstacle
+    uniqueID: 3512657043
+    locked: 0
+  - name: Item
+    uniqueID: 3016221633
+    locked: 0
+  - name: Player
+    uniqueID: 1248788007
+    locked: 0
+  - name: gimmick
+    uniqueID: 3235628247
+    locked: 0
+  - name: enemy
+    uniqueID: 928562703
+    locked: 0
+  - name: NPC
+    uniqueID: 3819979107
     locked: 0
