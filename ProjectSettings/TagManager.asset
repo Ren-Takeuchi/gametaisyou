@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -15,10 +16,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Item
+  - Obstacle
+  - InvisibleWall
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Backgroung
+    uniqueID: 2553408339
+    locked: 0
+  - name: Obstacle
+    uniqueID: 4224726161
+    locked: 0
+  - name: Item
+    uniqueID: 3248139457
+    locked: 0
+  - name: Player
+    uniqueID: 1556832527
     locked: 0
