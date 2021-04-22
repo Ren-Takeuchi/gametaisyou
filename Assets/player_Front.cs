@@ -16,13 +16,7 @@ public class player_Front : MonoBehaviour
     }
     void Update()
     {
-        // transformを取得
-        Transform myTransform = this.transform;
-
         x_val = Input.GetAxis("Horizontal");
-
-        Vector3 worldPos = myTransform.position;
-        myTransform.position = worldPos;  // ワールド座標での座標を設定
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
