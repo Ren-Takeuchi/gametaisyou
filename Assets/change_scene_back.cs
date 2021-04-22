@@ -22,7 +22,7 @@ public class change_scene_back : MonoBehaviour
         // 3秒後に画面遷移（scene2へ移動）
         if (step_time >= 2.0f)
         {
-            SceneManager.LoadScene("main_scene");
+            SceneManager.LoadScene("test");
         }
     }
 }
