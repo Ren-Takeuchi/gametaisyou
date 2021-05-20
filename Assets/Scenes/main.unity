@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 1030601517}
   - component: {fileID: 1030601520}
   - component: {fileID: 1030601519}
+  - component: {fileID: 1030601521}
   m_Layer: 0
   m_Name: player_back
   m_TagString: Untagged
@@ -241,6 +242,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.49, y: 2.56}
   m_Direction: 0
+--- !u!114 &1030601521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030601516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689b8d33d1b86d4f93ee8035c332f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSpeed: 10
 --- !u!1 &1348126198
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +267,7 @@ GameObject:
   - component: {fileID: 1348126199}
   - component: {fileID: 1348126202}
   - component: {fileID: 1348126201}
+  - component: {fileID: 1348126203}
   m_Layer: 0
   m_Name: player_Front
   m_TagString: Untagged
@@ -361,6 +376,19 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2.54}
   m_Direction: 0
+--- !u!114 &1348126203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348126198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8689b8d33d1b86d4f93ee8035c332f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputSpeed: 10
 --- !u!1 &1583389507
 GameObject:
   m_ObjectHideFlags: 0
