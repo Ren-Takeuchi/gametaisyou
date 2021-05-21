@@ -18,7 +18,6 @@ public class change_player : MonoBehaviour
 
     Vector3 player_pos;
 
-
     void Start()
     {
 
@@ -29,25 +28,25 @@ public class change_player : MonoBehaviour
     {
         front_fream++;
         back_fream++;
-        if (front_fream >= 120.0f && !change_check_front)
+        if (front_fream >= 300.0f && !change_check_front)
         {
             front_fream = 0.0f;
             change_check_front = true;
             player_pos = front_gameObject.transform.position;
         }
-        if (back_fream >= 120.0f && !change_check_back)
+        if (back_fream >= 300.0f && !change_check_back)
         {
             back_fream = 0.0f;
             change_check_back = true;
             back_gameObject.transform.position = new Vector3(player_pos.x, player_pos.y, player_pos.z);
         }
-        if (back_fream >= 120.0f && change_check_back)
+        if (back_fream >= 300.0f && change_check_back)
         {
             back_fream = 0.0f;
             change_check_back = false;
             player_pos = back_gameObject.transform.position;
         }
-        if (front_fream >= 120.0f && change_check_front)
+        if (front_fream >= 300.0f && change_check_front)
         {
             front_fream = 0.0f;
             change_check_front = false;

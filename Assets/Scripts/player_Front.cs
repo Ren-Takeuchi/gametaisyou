@@ -1,53 +1,82 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player_Front : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
-    private float x_val;
-    private float y_val;
-    private float speed;
-    public float inputSpeed;
 
+    //変数定義
+    public float flap = 1000f;
+    public float scroll = 5f;
+    float direction = 0f;
+    Rigidbody2D rb2d;
+    bool jump = false;
+
+    private GameObject GameObject;
+
+    // Use this for initialization
     void Start()
     {
+        //コンポーネント読み込み
         rb2d = GetComponent<Rigidbody2D>();
     }
+
+
+    // Update is called once per frame
     void Update()
     {
-        x_val = Input.GetAxis("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        //キーボード操作
+        if (Input.GetKey(KeyCode.D))
         {
-            if (rb2d.velocity.y == 0)
-            {
-                rb2d.AddForce(transform.up * 300);
-            }
-        }
-    }
-    void FixedUpdate()
-    {
-        //待機
-        if (x_val == 0)
-        {
-            speed = 0;
-        }
-        //右に移動
-        else if (x_val > 0)
-        {
-            speed = inputSpeed;
+            direction = 3f;
             //右方向を向く
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        //左に移動
-        else if (x_val < 0)
+        else if (Input.GetKey(KeyCode.A))
         {
-            speed = inputSpeed * -1;
+            direction = -3f;
             //左方向を向く
             transform.localScale = new Vector3(1, 1, 1);
+
         }
-        // キャラクターを移動 Vextor2(x軸スピード、y軸スピード(元のまま))
-        rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
+        else
+        {
+            direction = 0f;
+        }
+
+
+        //キャラのy軸のdirection方向にscrollの力をかける
+        rb2d.velocity = new Vector2(scroll * direction, rb2d.velocity.y);
+
+        //ジャンプ判定
+        if (Input.GetKeyDown("space") && !jump)
+        {
+            rb2d.AddForce(Vector2.up * flap);
+            jump = true;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            jump = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Goal")
+        {
+            SceneManager.LoadScene("clear");
+        }
+
+        if (collider.gameObject.tag == "gameover")
+        {
+            SceneManager.LoadScene("1-2");
+        }
+
     }
 }

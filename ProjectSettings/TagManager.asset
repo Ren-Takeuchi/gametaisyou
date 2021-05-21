@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Item
+  - Ground
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Item
   - Obstacle
   - invisibleWall
-  - 
+  - Ground
   - 
   - 
   - 
@@ -62,4 +64,7 @@ TagManager:
     locked: 0
   - name: NPC
     uniqueID: 3819979107
+    locked: 0
+  - name: Ground
+    uniqueID: 630452247
     locked: 0
