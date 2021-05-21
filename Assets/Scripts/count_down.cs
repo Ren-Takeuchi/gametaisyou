@@ -16,14 +16,27 @@ public class count_down : MonoBehaviour
     void Start()
     {
         CountDownTime = 2.0F;    // カウントダウン開始秒数をセット
+
+        if (CountDownTime == 0.0f)
+        {
+            CountDownTime = 2.0F;
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {
-        // カウントダウンタイムを整形して表示
-        TextCountDown.text = String.Format("Time: {0:00.00}", CountDownTime);
-        // 経過時刻を引いていく
-        CountDownTime -= Time.deltaTime;
+    { 
+        if(CountDownTime == 0.0f)
+        {
+            CountDownTime = 2.0F;
+        }
+        else
+        {
+            // カウントダウンタイムを整形して表示
+            TextCountDown.text = String.Format("Time: {0:00.00}", CountDownTime);
+
+            // 経過時刻を引いていく
+            CountDownTime -= Time.deltaTime;
+        }
     }
 }

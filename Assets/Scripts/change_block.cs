@@ -24,14 +24,14 @@ public class change_block : MonoBehaviour
     {
         front_fream++;
        
-        if (front_fream >= 120.0f && !change_check_front)
+        if (front_fream >= 300.0f && !change_check_front)
         {
             front_fream = 0.0f;
             change_check_front = true;
            
         }
   
-        if (front_fream >= 120.0f && change_check_front)
+        if (front_fream >= 300.0f && change_check_front)
         {
             front_fream = 0.0f;
             change_check_front = false;
