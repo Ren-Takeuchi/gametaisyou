@@ -14,7 +14,7 @@ public class player_Front : MonoBehaviour
     Rigidbody2D rb2d;
     bool jump = false;
 
-    private GameObject GameObject;
+    public GameObject player;
 
     // Use this for initialization
     void Start()
@@ -64,19 +64,5 @@ public class player_Front : MonoBehaviour
         {
             jump = false;
         }
-    }
-
-    void OnTriggerEnter(Collider collider)
-    {
-        if (collider.gameObject.tag == "Goal")
-        {
-            SceneManager.LoadScene("clear");
-        }
-
-        if (collider.gameObject.tag == "gameover")
-        {
-            SceneManager.LoadScene("1-2");
-        }
-
     }
 }
