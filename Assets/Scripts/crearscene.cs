@@ -19,6 +19,6 @@ public class crearscene : MonoBehaviour
 
     public void OnClickStartBotton()
     {
-        SceneManager.LoadScene("1-2");
+        SceneManager.LoadScene("title");
     }
 }
