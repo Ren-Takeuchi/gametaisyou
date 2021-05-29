@@ -16,17 +16,8 @@ public class change_scene_trigger : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collider.gameObject.tag == "Goal")
-        {
-            SceneManager.LoadScene("clear");
-        }
-
-        if (collider.gameObject.tag == "gameover")
-        {
-            SceneManager.LoadScene("1-2");
-        }
-
+        SceneManager.LoadScene("clear");
     }
 }
