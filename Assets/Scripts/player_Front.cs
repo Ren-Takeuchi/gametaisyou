@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +13,8 @@ public class player_Front : MonoBehaviour
     Rigidbody2D rb2d;
     bool jump = false;
 
+    public float speed = 3.0f;
+
     public GameObject player;
 
     // Use this for initialization
@@ -27,6 +28,7 @@ public class player_Front : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //キーボード操作
         if (Input.GetKey(KeyCode.D))
         {
@@ -46,19 +48,38 @@ public class player_Front : MonoBehaviour
             direction = 0f;
         }
 
+        float horizontalKey = Input.GetAxisRaw("Horizontal");
+
+        //右入力で左向きに動く
+        if (horizontalKey > 0)
+        {
+            rb2d.velocity = new Vector2(speed, rb2d.velocity.y);
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        //左入力で左向きに動く
+        else if (horizontalKey < 0)
+        {
+            rb2d.velocity = new Vector2(-speed, rb2d.velocity.y);
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        //ボタンを話すと止まる
+        else
+        {
+            rb2d.velocity = Vector2.zero;
+        }
 
         //キャラのy軸のdirection方向にscrollの力をかける
         rb2d.velocity = new Vector2(scroll * direction, rb2d.velocity.y);
 
         //ジャンプ判定
-        if (Input.GetKeyDown("space") && !jump)
+        if (Input.GetKeyDown("space") && !jump || Input.GetButtonDown("Jump") && !jump)
         {
             rb2d.AddForce(Vector2.up * flap);
             jump = true;
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
@@ -66,3 +87,4 @@ public class player_Front : MonoBehaviour
         }
     }
 }
+
