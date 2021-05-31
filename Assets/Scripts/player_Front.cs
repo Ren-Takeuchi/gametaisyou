@@ -48,7 +48,7 @@ public class player_Front : MonoBehaviour
             direction = 0f;
         }
 
-        float horizontalKey = Input.GetAxisRaw("Horizontal");
+        float horizontalKey = Input.GetAxis("Horizontal");
 
         //右入力で左向きに動く
         if (horizontalKey > 0)
