@@ -14,7 +14,10 @@ public class crearscene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButtonDown("Jump"))
+        {
+            SceneManager.LoadScene("title");
+        }
     }
 
     public void OnClickStartBotton()
